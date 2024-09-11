@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authenticator</title>
+</head>
+<body>
+    <h1 class="login"></h1>
+</body>
+<script>
+    function userID() {
+        let userName = prompt("Please enter user name: ");
+        if (userName == "admin") {
+            return(true);
+        }
+        else {
+            return(false)
+        }
+        
+    };
+    function password() {
+        let pass = prompt("Please enter password: ");
+        if (pass == "secret") {
+            return(true);
+        }
+        else {
+            return(false)
+        }
+    };
+
+    let user = userID();
+    let pass = password();
+
+    if (user == true && pass == true) {
+        console.log("Welcome admin!");
+        let welcome = document.querySelector(".login");
+        welcome.innerHTML = `Welcome admin!`
+    }
+    else {
+        console.log("BAD LOGIN CREDENTIALS");
+        let badlogin = document.querySelector(".login");
+        badlogin.innerHTML = `BAD LOGIN CREDENTIALS`
+    }
+</script>
+</html>
